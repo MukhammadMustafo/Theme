@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
+/* body{
+    height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Roboto";
+    background-color: #f2f2f7;
+    transition: 1s;
+} */
+.App{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Roboto";
+    background-color: #f2f2f7;
+    transition: 3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dark{
+    background-color: #212121;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Roboto";
+    transition: 3s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.switch{
+    position: relative;
+    width: 25%;
+    height: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.input{
+    opacity: 0;
+    width: 300px;
+    height: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    height: 50px;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(215, 215, 228);
+    transition: 2s;
+    border-radius: 30px;
+}
+
+.slider::before{
+    position: absolute;
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    border-radius: 20px;
+    left: 0.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+    transition: 2.5s;
+}
+
+.input:checked + .slider{
+    background-color: #37393f;
+}
+
+.input:checked + .slider::before {
+    left: calc(100% - 1.7rem);
+    background: #37393f;
+    box-shadow: inset -3px -2px 5px -2px #8983f7,
+    inset -10px -4px 0 0 #a3dafb;
 }
